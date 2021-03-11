@@ -2,9 +2,9 @@
 
 class Node(object):
     # 节点创建
-    def __init__(self, val, p=0):
+    def __init__(self, val, next=None):
         self.data = val
-        self.next = p
+        self.next = next
 
 class SingleLinkList(object):
     def __init__(self):
