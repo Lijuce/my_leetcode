@@ -1,34 +1,8 @@
 # LeetCode题号25-K个一组翻转链表
 
-class Node:
-    def __init__(self, val=0, next=None):
-        self.data = val
-        self.next = next
+from BaseLink import *
 
-class SingleLinkList(object):
-    def __init__(self):
-        self.head = 0  # 头结点
-    
-    def construct(self, datas: list):
-        # 单链表创建
-        self.head = Node(datas[0])
-        p = self.head
-        for number in datas[1:]:
-            new_node = Node(number)
-            p.next = new_node
-            p = p.next
-        p.next = None  # 尾部结点指向None
-        return self.head
-
-    def travel(self, head):
-        # 链表遍历
-        cur = head
-        while cur is not None:
-            print(cur.data)
-            cur = cur.next
-        # print(cur.data)  # 尾结点的值
-        print("遍历完成！")
-
+class SingleLinkList(Link):
     def reverse(self, start: Node, obj: Node) -> Node:
         # 迭代方式实现链表整体反转
         cur = start
@@ -71,4 +45,4 @@ link = SingleLink.construct([1,2,3,4,5,6,7])  # 链表初始化
 # b = a.next.next
 # link = SingleLink.reverse(a, b)
 link = SingleLink.reverseKGroup(link, 3)
-SingleLink.travel(link)
+SingleLink.printLink(link)

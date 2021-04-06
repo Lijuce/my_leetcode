@@ -1,4 +1,5 @@
 # LeetCode题号234-回文链表检测
+from BaseLink import *
 
 # 热身题 题号9-回文数  
 def isPalindrome(x: int) -> bool:
@@ -35,30 +36,7 @@ class Node:
         self.data = val
         self.next = next
 
-class SingleLinkList(object):
-    def __init__(self):
-        self.head = 0  # 头结点
-    
-    def construct(self, datas: list):
-        # 单链表创建
-        self.head = Node(datas[0])
-        p = self.head
-        for number in datas[1:]:
-            new_node = Node(number)
-            p.next = new_node
-            p = p.next
-        p.next = None  # 尾部结点指向None
-        return self.head
-
-    def travel(self, head):
-        # 链表遍历
-        cur = head
-        while cur is not None:
-            print(cur.data)
-            cur = cur.next
-        # print(cur.data)  # 尾结点的值
-        print("遍历完成！")
-
+class SingleLinkList(Link):   
     def traverse(self, right: Node) -> bool:
         # 利用 栈 做后序遍历 
         # 算法的时间和空间复杂度都是 O(N)
@@ -104,17 +82,12 @@ class SingleLinkList(object):
             left = left.next
             traversed_right = traversed_right.next
 
-        return True
-
-
-        
+        return True      
     
     def isPalindrome(self, head: Node) -> bool:
         self.left = head
         return self.advanced_traverse(head)
 
 SingleLink = SingleLinkList()
-link = SingleLink.construct([1,2,2,1])  # 链表初始化
-SingleLink.travel(link)
+link = SingleLink.construct([1,2,2,2,1,1])  # 链表初始化
 print(SingleLink.isPalindrome(link))
-SingleLink.travel(link)

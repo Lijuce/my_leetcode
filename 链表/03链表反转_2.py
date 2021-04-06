@@ -1,35 +1,8 @@
 # LeetCode题号92-反转链表2(连续区间部分链表反转)
 # python实现链表反转-连续区间部分链表反转
+from BaseLink import *
 
-class Node:
-    def __init__(self, val=0, next=None):
-        self.data = val
-        self.next = next
-
-class SingleLinkList(object):
-    def __init__(self):
-        self.head = 0  # 头结点
-    
-    def construct(self, datas: list):
-        # 单链表创建
-        self.head = Node(datas[0])
-        p = self.head
-        for number in datas[1:]:
-            new_node = Node(number)
-            p.next = new_node
-            p = p.next
-        p.next = None  # 尾部结点指向None
-        return self.head
-
-    def travel(self, head):
-        # 链表遍历
-        cur = head
-        while cur is not None:
-            print(cur.data)
-            cur = cur.next
-        # print(cur.data)  # 尾结点的值
-        print("遍历完成！")
-
+class SingleLinkList(Link):
     def reverseBetween_PreN(self, head, N, mode="recu"):
         # 递归方式实现反转链表前N个节点
         # head = self.head
@@ -104,4 +77,4 @@ link = SingleLink.reverseKGroup(link, 3)
 # a = link.next
 # b = a.next.next
 # link = SingleLink.reverse(a, b)
-SingleLink.travel(link)
+SingleLink.printLink(link)
