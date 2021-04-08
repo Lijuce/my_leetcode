@@ -1,7 +1,6 @@
 # 力扣热门100题之一
 # 543. 二叉树的直径
 
-
 def diameterOfBinaryTree(self, root: TreeNode) -> int:
     # 深度遍历有限 (后续遍历框架)
     self.ans = 0

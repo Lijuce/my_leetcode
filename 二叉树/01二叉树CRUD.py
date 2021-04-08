@@ -62,8 +62,6 @@ class Tree(BiTree):
                 return
             right = peek.right
             left = peek.left
-            # print(left.data)
-            # print(right.data)
             print(peek.data, end=' ')
 
             stack.append(left)

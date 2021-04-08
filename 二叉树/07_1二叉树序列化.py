@@ -27,29 +27,30 @@ class Tree(BiTree):
         :type root: TreeNode
         :rtype: str
         """
-        if root is None:
-            self.res.append("#")
-            return
-        self.res.append(str(root.data))
-        self.serialize(root.left)
-        self.serialize(root.right)
+        def ser(root):
+            if root is None:
+                self.res.append("#")
+                return
+            self.res.append(str(root.val))
+            ser(root.left)
+            ser(root.right)
+        ser(root)
 
         return ','.join(self.res)
 
-    def deserialize(self, data):
+    def deserialize(self, data: str):
         """Decodes your encoded data to tree.
         
         :type data: str
-        :rtype: TreeNode
+        :rtype: Node
         """
         # 输入： "1,2,#,#,3,4,#,#,5,#,#"
         def des(data):
-            if len(data) == 0:
-                return
-            d = data.pop(0)
-            root = Node(d)
-            if root.data == '#':
+            d = next(data)
+            if d == '#':
                 return None 
+
+            root = TreeNode(d)
             root.left = des(data)
             root.right = des(data)
             return root
@@ -57,8 +58,7 @@ class Tree(BiTree):
         if data is None:
             return None
 
-        data = data.split(",")
-        root = des(data)
+        root = des(iter(data.split(",")))
         return root
 
 
