@@ -10,7 +10,7 @@ def longestPalindromeSubseq(s: str) -> int:
 
     for i in range(n-1, -1, -1):
         for j in range(i+1, n):
-            if s[i] == s[j]:
+            if s[i] == s[j]:    
                 dp[i][j] = dp[i+1][j-1] + 2  # 它俩一定在最长回文子序列中
             else:
                 dp[i][j] = max(dp[i+1][j], dp[i][j-1])  # s[i+1..j] 和 s[i..j-1] 谁的回文子序列更长？

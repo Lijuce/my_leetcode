@@ -12,7 +12,7 @@ def maxSubArray(self, nums):
     # dp[0] = nums[0]
     for i in range(1, length):
         # dp[i] = max(nums[i], dp[i-1]+nums[i])  # 空间复杂度 O(n)
-        nums[i] = nums[i] + max(nums[i-1], 0)
+        nums[i] = nums[i] + max(nums[i-1], 0)  # 空间复杂度 O(n)
     return max(nums)
 
 
