@@ -1,4 +1,4 @@
-public class reverseLink {
+public class solution {
 
     /**
      * 迭代法反转单链表
