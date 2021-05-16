@@ -1,4 +1,4 @@
-public class reverseLink2 {
+public class solution {
 
     /**
      * 迭代方式实现链表前N个元素反转
