@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class Solution {
     /**
      * 221. 最大正方形
@@ -13,9 +15,8 @@ class Solution {
         if (xLen < 1) {
             return 0;
         }
-        // dp空间数组定义
+        // dp空间数组定义：以坐标点(i,j) 为右下角的最大正方形，而非区域中最大正方形
         int[][] dp = new int[xLen+1][yLen+1];
-
         // 以正方形右下角为关键节点，计算出其最大长度
         int res = 0;
         for (int i = 1; i < xLen+1; i++) {
