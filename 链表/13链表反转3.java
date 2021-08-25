@@ -1,46 +1,39 @@
-public class Solution {
-    public static LinkNode reverseKGroup(LinkNode head, int K){
-        int count = 0;
-        LinkNode start = head;
-        LinkNode obj = head;
-        while (count < K){
-            obj = obj.next;
-            if (obj == null)
+class Solution {
+    /**
+     * K个一组进行链表反转
+     * 法一：递归法
+     * @param head
+     * @param k
+     * @return
+     */
+    public ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null)
+            return head;
+        ListNode start = head;
+        ListNode end = head;
+        // 先找到要翻转的那部分
+        for (int i = 0; i < k; i++) {
+            if (end == null)
                 return head;
-            count ++;
+            end = end.next;
         }
 
-        LinkNode newHead = reverseSingleLinkIter(start, obj);
-        start.next = reverseKGroup(obj, K);
-        return newHead;
+        // 翻转指定部分
+        ListNode last = reverseSingleLinkIter(start, end);
+        // 递归继续K组翻转
+        start.next = reverseKGroup(end, k);
+        return last;
     }
-
-    public static LinkNode reverseLinkPreN(LinkNode head, int N){
-        int index = 1;
-        LinkNode cur = head;
-        LinkNode back;
-        LinkNode prev = null;
-        while (cur != null  && index <= N){
-            back = cur.next;
-            cur.next = prev;
-            prev = cur;
-            cur = back;
-            index ++;
-        }
-        head.next = cur;
-        return prev;
-    }
-
     /**
      * 迭代反转整体单链表
      * @param start
      * @param end
      * @return
      */
-    public static LinkNode reverseSingleLinkIter(LinkNode start, LinkNode end){
-        LinkNode cur = start;
-        LinkNode successor = null;
-        LinkNode prev = null;
+    public ListNode reverseSingleLinkIter(ListNode start, ListNode end){
+        ListNode cur = start;
+        ListNode successor = null;
+        ListNode prev = null;
         while (cur != end){
             successor = cur.next;
             cur.next = prev;
@@ -50,3 +43,46 @@ public class Solution {
         return prev;
     }
 }
+
+class Solution {
+    /**
+     * K个一组进行链表反转
+     * 法二：
+     * @param head
+     * @param k
+     * @return
+     */
+    public ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null)
+            return head;
+        ListNode start = head;
+        ListNode end = head;
+        // 先找到要翻转的那部分
+        for (int i = 0; i < k; i++) {
+            if (end == null)
+                return head;
+            end = end.next;
+        }
+
+        // 翻转指定部分
+        ListNode last = reverseSingleLinkIter(start, end);
+        // 递归继续K组翻转
+        start.next = reverseKGroup(end, k);
+        return last;
+    }
+
+    public ListNode reverseSingleLinkIter(ListNode start, ListNode end){
+        ListNode cur = start;
+        ListNode successor = null;
+        ListNode prev = null;
+        while (cur != end){
+            successor = cur.next;
+            cur.next = prev;
+            prev = cur;
+            cur = successor;
+        }
+        return prev;
+    }
+}
+
+
