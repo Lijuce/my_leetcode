@@ -100,7 +100,7 @@ class Solution {
 
 /**
  * 巧妙解法：利用二维矩阵的四个顶角特性
- * 
+ * 从右上角开始出发
  */
 class Solution {
     public boolean searchMatrix(int[][] matrix, int target) {
