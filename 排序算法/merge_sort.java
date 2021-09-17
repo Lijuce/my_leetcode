@@ -1,44 +1,53 @@
-class solution{
-    /**
-     * 归并排序算法
-     * @param arr
-     * @param left
-     * @param right
-     * @param temp
-     */
-    public static void mergeSort(int[] arr, int left, int right , int[] temp){
-        if (left < right){
-            int mid = (left + right) / 2;
-            mergeSort(arr, left, mid, temp);  // 左边递归地归并排序
-            mergeSort(arr, mid+1, right, temp);  // 右边递归地归并排序
-            merge(arr, left, mid, right, temp);  // 左右两边最后进行归并
-        }
+package com.sort;
+
+/**
+ * @ClassName mergeSort
+ * @Description TODO
+ * @Author Lijuce_K
+ * @Date 2021/9/15 21:01
+ * @Version 1.0
+ **/
+public class mergeSort {
+    public static void main(String[] args) {
+        int[] nums = {22,33,49,47,33,12,68,29,22};
+        callSort(nums);
+        for(int n: nums)
+            System.out.println(n);
     }
-    public static void merge(int[] arr, int left, int mid, int right, int[] temp){
-        int tempIndex = 0;
-        int leftStartIndex = left, rightStartIndex = mid+1;
-        while (leftStartIndex <= mid && rightStartIndex <= right){  // 将两边的数组值一一比较
-            if (arr[leftStartIndex] < arr[rightStartIndex])
-                temp[tempIndex++] = arr[leftStartIndex++];
-            else
-                temp[tempIndex++] = arr[rightStartIndex++];
-        }
-        while (leftStartIndex <= mid){  // 左边还有剩余，将剩余全部拷贝至临时数组
-            temp[tempIndex++] = arr[leftStartIndex++];
-        }
-        while (rightStartIndex <= right){  // 右边还有剩余，做法同上
-            temp[tempIndex++] = arr[rightStartIndex++];
-        }
-        for (int i = 0; i < tempIndex; i++) {  // 最后赋回给原数组
-            arr[left+i] = temp[i];
+
+    public static void callSort(int[] array) {
+        mergeSort(array, 0, array.length-1);
+    }
+
+    public static void mergeSort(int[] array, int left, int right) {
+        int mid = (left + right) / 2;
+        if (left < right) {
+            mergeSort(array, left, mid);
+            mergeSort(array, mid+1, right);
+            merge(array, left, mid, right);
         }
     }
 
-    public static void main(String[] args) {
-        int[] nums = {22,33,49,47,33,12,68,29,22};
-        int[] temp = new int[nums.length];
-        mergeSort(nums, 0, nums.length - 1, temp);
-        for (int n: nums)
-            System.out.println(n);
+    public static void merge(int[] array, int left, int mid, int right) {
+        int[] temp = new int[right-left+1];
+        int leftStartIdx = left;
+        int rightStartIdx = mid+1;
+        int idx = 0;
+        while (leftStartIdx <= mid && rightStartIdx <= right) {
+            if (array[leftStartIdx] < array[rightStartIdx]) {
+                temp[idx++] = array[leftStartIdx++];
+            } else {
+                temp[idx++] = array[rightStartIdx++];
+            }
+        }
+        while (leftStartIdx <= mid) {
+            temp[idx++] = array[leftStartIdx++];
+        }
+        while (rightStartIdx <= right) {
+            temp[idx++] = array[rightStartIdx++];
+        }
+        for (int i = 0; i < idx; i++) {
+            array[left+i] = temp[i];
+        }
     }
 }
