@@ -1,0 +1,7 @@
+
+dpython:S2208"GImport only needed names or import the module and then use its members.(Ûƒˆéùÿÿÿÿ
+`python:S1854	"HRemove this assignment to local variable 'nxt'; the value is never used.(§¤øå
+ypython:S5886"aReturn a value of type "Node" instead of "NoneType" or update function "reverseKGroup" type hint.(ò¤Ÿù
+ipython:S117"MRename this parameter "K" to match the regular expression ^[_a-z][a-z0-9_]*$.(‘‰‡¯ùÿÿÿÿ
+<python:S1481"%Remove the unused local variable "i".(×Õõ^
+6python:S125,"Remove this commented out code.(ëÐ­€

@@ -1,0 +1,14 @@
+
+O
+java:S1118":Add a private constructor to hide the implicit public one.(×ÿðD
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(šÖ¯æ
+F
+java:S1481
+"+Remove this unused "result" local variable.(µ‰˜Üøÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ìÑÑÈÿÿÿÿÿ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(“ˆÔûÿÿÿÿÿ
+E
+java:S1144"/Remove this unused private "NFactorial" method.(šÖ¯æ
+a	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(×ÿðD
+0
+java:S1220""Move this file to a named package.

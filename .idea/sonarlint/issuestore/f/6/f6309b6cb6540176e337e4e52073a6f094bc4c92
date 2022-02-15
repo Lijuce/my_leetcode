@@ -1,0 +1,5 @@
+
+Gpython:S1066"/Merge this if statement with the enclosing one.(ÔîÈ
+kpython:S117"URename this parameter "targetSum" to match the regular expression ^[_a-z][a-z0-9_]*$.(Ò•ï3
+dpython:S1542"MRename function "pathSum" to match the regular expression ^[a-z_][a-z0-9_]*$.(Ò•ï3
+;python:S125"Remove this commented out code.(°ÔĞŸøÿÿÿÿ

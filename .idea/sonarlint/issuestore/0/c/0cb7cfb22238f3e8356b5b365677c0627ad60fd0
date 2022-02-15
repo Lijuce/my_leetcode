@@ -1,0 +1,7 @@
+
+h
+java:S3776	"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(дм”к
+R
+java:S1854"<Remove this useless assignment to local variable "tempList".(Т€‹К
+0
+java:S1220""Move this file to a named package.

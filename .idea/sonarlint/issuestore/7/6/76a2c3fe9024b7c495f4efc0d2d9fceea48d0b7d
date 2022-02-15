@@ -1,0 +1,11 @@
+
+_python:S2208"GImport only needed names or import the module and then use its members.(áÒê
+6python:S125"Remove this commented out code.(ôÛï
+hpython:S117"QRename this parameter "inEnd" to match the regular expression ^[_a-z][a-z0-9_]*$.(óåØª
+jpython:S117"SRename this parameter "inStart" to match the regular expression ^[_a-z][a-z0-9_]*$.(óåØª
+npython:S117"RRename this parameter "preEnd" to match the regular expression ^[_a-z][a-z0-9_]*$.(ò¸æÜşÿÿÿÿ
+ppython:S117"TRename this parameter "preStart" to match the regular expression ^[_a-z][a-z0-9_]*$.(ò¸æÜşÿÿÿÿ
+hpython:S1173"QRename this parameter "inEnd" to match the regular expression ^[_a-z][a-z0-9_]*$.(óåØª
+jpython:S1173"SRename this parameter "inStart" to match the regular expression ^[_a-z][a-z0-9_]*$.(óåØª
+opython:S1172"SRename this parameter "postEnd" to match the regular expression ^[_a-z][a-z0-9_]*$.(è»åüÿÿÿÿ
+qpython:S1172"URename this parameter "postStart" to match the regular expression ^[_a-z][a-z0-9_]*$.(è»åüÿÿÿÿ
